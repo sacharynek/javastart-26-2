@@ -26,7 +26,7 @@ public class Task {
     public Task() {
     }
 
-    public Task(String description, Category category, boolean isReady, boolean isArchived) {
+    public Task(String description,  boolean isReady, boolean isArchived) {
 
         this.description = description;
         //   this.category = category;
@@ -50,7 +50,7 @@ public class Task {
         this.description = description;
     }
 
-//    public Category getCategory() {
+    //    public Category getCategory() {
 //        return category;
 //    }
 //

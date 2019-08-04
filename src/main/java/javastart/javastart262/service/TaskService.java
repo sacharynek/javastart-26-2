@@ -14,8 +14,8 @@ import java.util.Optional;
 @Transactional
 public class TaskService {
 
-    @Autowired
-    private TaskRepository repo;
+
+    private TaskRepository repo;//tutaj wstrzyknąć enetity manager factory
 
     public List<Task> listAll() {
         return repo.findAll();

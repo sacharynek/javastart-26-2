@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8"/>
+  <title>Task Manager</title>
+</head>
+<body>
+<div align="center">
+  <h1>Task List</h1>
+  <a href="/new">Create New Task</a>
+  <br/><br/>
+  <table border="1" cellpadding="10">
+    <thead>
+    <tr>
+      <th>Task ID</th>
+      <th>Description</th>
+      <th>Is Ready</th>
+      <th>Is Archived</th>
+
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="task : ${taskList}">
+      <td th:text="${task.id}">Task ID</td>
+      <td th:text="${task.description}">Description</td>
+      <td th:text="${task.isReady()}">Is Ready</td>
+      <td th:text="${task.isArchived()}">Is Archived</td>
+
+      <td>
+        <a th:href="/@{'/edit/' + ${product.id}}">Edit</a>
+        &nbsp;&nbsp;&nbsp;
+        <a th:href="/@{'/delete/' + ${product.id}}">Delete</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>
